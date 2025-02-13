@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ee8d7d2e-cfed-470f-a07c-4042e20bad1a",
+    "status": "ACTIVE",
+    "visible": true,
+    "createdDate": "2025-02-12T21:56:36.867242600",
+    "title": "Java Kitobi",
+    "authorName": "Bobur aka",
+    "year": 2025,
+    "price": 30000.0,
+    "regionEntity": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "nameUz": "Toshkent shahri",
+      "nameEng": "Tashkent city",
+      "nameRu": "Город Ташкент"
+    },
+    "genreEntities": [
+      {
+        "id": "6e77f0bf-0666-4caf-8fb0-3166c69d1bb6",
+        "nameUz": "Qorqinchli",
+        "nameEng": "Horror",
+        "nameRu": "Panika"
+      },
+      {
+        "id": "6e77f0bf-0666-4caf-8fb0-3166c69d1bb4",
+        "nameUz": "Sarguzasht",
+        "nameEng": "Advanture",
+        "nameRu": "sdfghj"
+      }
+    ],
+    "profile": {
+      "id": "ae326423-d438-4586-86de-ccb764cfe21e",
+      "status": "ACTIVE",
+      "visible": true,
+      "createdDate": "2025-02-07T21:20:55.732205600",
+      "name": "Admin",
+      "phone": "9999",
+      "password": "9999",
+      "age": 32,
+      "balance": 0.0,
+      "role": "ADMIN"
+    }
+  }
+]

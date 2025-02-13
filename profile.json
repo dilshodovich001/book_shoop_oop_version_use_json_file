@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ae326423-d438-4586-86de-ccb764cfe21e",
+    "status": "ACTIVE",
+    "visible": true,
+    "createdDate": "2025-02-07T21:20:55.732205600",
+    "name": "Admin",
+    "phone": "9999",
+    "password": "9999",
+    "age": 32,
+    "balance": 0.0,
+    "role": "ADMIN"
+  },
+  {
+    "id": "ae326423-d438-4586-86de-ccb764cfe56e",
+    "status": "ACTIVE",
+    "visible": true,
+    "createdDate": "2025-02-07T21:20:55.732205600",
+    "name": "Ma'ruf",
+    "phone": "8888",
+    "password": "8888",
+    "age": 25,
+    "balance": 0.0,
+    "role": "USER"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "nameUz": "Toshkent shahri",
+    "nameEng": "Tashkent city",
+    "nameRu": "Город Ташкент"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "nameUz": "Toshkent viloyati",
+    "nameEng": "Tashkent region",
+    "nameRu": "Ташкентская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "nameUz": "Andijon viloyati",
+    "nameEng": "Andijan region",
+    "nameRu": "Андижанская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "nameUz": "Buxoro viloyati",
+    "nameEng": "Bukhara region",
+    "nameRu": "Бухарская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "nameUz": "Jizzax viloyati",
+    "nameEng": "Jizzakh region",
+    "nameRu": "Джизакская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "nameUz": "Qoraqalpog‘iston",
+    "nameEng": "Karakalpakstan",
+    "nameRu": "Каракалпакстан"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440006",
+    "nameUz": "Qashqadaryo viloyati",
+    "nameEng": "Kashkadarya region",
+    "nameRu": "Кашкадарьинская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440007",
+    "nameUz": "Navoiy viloyati",
+    "nameEng": "Navoi region",
+    "nameRu": "Навоийская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440008",
+    "nameUz": "Namangan viloyati",
+    "nameEng": "Namangan region",
+    "nameRu": "Наманганская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440009",
+    "nameUz": "Samarqand viloyati",
+    "nameEng": "Samarkand region",
+    "nameRu": "Самаркандская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440010",
+    "nameUz": "Surxondaryo viloyati",
+    "nameEng": "Surkhandarya region",
+    "nameRu": "Сурхандарьинская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440011",
+    "nameUz": "Sirdaryo viloyati",
+    "nameEng": "Syrdarya region",
+    "nameRu": "Сырдарьинская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440012",
+    "nameUz": "Farg‘ona viloyati",
+    "nameEng": "Fergana region",
+    "nameRu": "Ферганская область"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440013",
+    "nameUz": "Xorazm viloyati",
+    "nameEng": "Khorezm region",
+    "nameRu": "Хорезмская область"
+  }
+]
