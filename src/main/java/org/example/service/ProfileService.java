@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.dto.ProfileRequest;
+import org.example.dto.ProfileResponse;
 import org.example.entity.Profile;
 import org.example.enums.GeneralStatus;
 import org.example.exeptions.MethodNotAllowedException;
@@ -45,5 +46,9 @@ public class ProfileService {
         );
         profileRepository.save(profile);
         return "Successfully";
+    }
+
+    public ProfileResponse getProfileMapper(Profile profile) {
+        return new ProfileResponse(profile.getId(),profile.getName(),profile.getPhone());
     }
 }

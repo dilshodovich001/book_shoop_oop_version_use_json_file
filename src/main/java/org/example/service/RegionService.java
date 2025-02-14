@@ -89,7 +89,17 @@ public class RegionService {
         return regionResponses;
     }
 
-    public List<RegionEntity> getById(){
+    public List<RegionEntity> getById() {
         return regionRepository.regionList();
+    }
+
+    public RegionResponse.RegionLang getRegionByLang(Language lan, RegionEntity regionEntity) {
+        return new RegionResponse.RegionLang(regionEntity.getId(),
+                switch (lan) {
+                    case en -> regionEntity.getNameEng();
+                    case ru -> regionEntity.getNameRu();
+                    default -> regionEntity.getNameUz();
+                }
+        );
     }
 }

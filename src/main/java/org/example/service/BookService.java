@@ -1,9 +1,11 @@
 package org.example.service;
 
 import org.example.dto.BookRequest;
+import org.example.dto.BookResponse;
 import org.example.entity.BookEntity;
 import org.example.entity.GenreEntity;
 import org.example.entity.RegionEntity;
+import org.example.enums.Language;
 import org.example.repository.BookRepository;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ public class BookService {
     private final BookRepository bookRepository = new BookRepository();
     private final GenreService genreService = new GenreService();
     private final RegionService regionService = new RegionService();
+    private final ProfileService profileService = new ProfileService();
 
     public void addBook(BookRequest request) {
         List<GenreEntity> genreEntities = new ArrayList<>();
@@ -33,5 +36,22 @@ public class BookService {
         entity.setGenreEntities(genreEntities);
         entity.setRegionEntity(regionEntity);
         bookRepository.save(entity);
+    }
+
+    public List<BookResponse> showBook(String lan) {
+        List<BookResponse> responses = new ArrayList<>();
+        List<BookEntity> entities = bookRepository.getData();
+        for (BookEntity entity : entities) {
+            BookResponse response = new BookResponse();
+            response.setAuthor(entity.getAuthorName());
+            response.setTitle(entity.getTitle());
+            response.setYear(entity.getYear());
+            response.setPrice(entity.getPrice());
+            response.setRegion(regionService.getRegionByLang(Language.valueOf(lan), entity.getRegionEntity()));
+            response.setGenres(genreService.getGenByLang(Language.valueOf(lan), entity.getGenreEntities()));
+            response.setProfile(profileService.getProfileMapper(entity.getProfile()));
+            responses.add(response);
+        }
+        return responses;
     }
 }

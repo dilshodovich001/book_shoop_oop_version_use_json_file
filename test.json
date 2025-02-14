@@ -1,0 +1,25 @@
+{
+  "title": "Java Kitobi",
+  "author": "Bobur aka",
+  "year": 2025,
+  "price": 30000.0,
+  "region": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "name": "Toshkent shahri"
+  },
+  "genres": [
+    {
+      "id": "6e77f0bf-0666-4caf-8fb0-3166c69d1bb6",
+      "name": "Qorqinchli"
+    },
+    {
+      "id": "6e77f0bf-0666-4caf-8fb0-3166c69d1bb4",
+      "name": "Sarguzasht"
+    }
+  ],
+  "profile": {
+    "id": "ae326423-d438-4586-86de-ccb764cfe21e",
+    "name": "Admin",
+    "phone": "9999"
+  }
+}

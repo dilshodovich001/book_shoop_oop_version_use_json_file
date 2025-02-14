@@ -10,4 +10,8 @@ public class BookRepository {
     public void save(BookEntity bookEntity){
         dbBookConnection.writeValue(List.of(bookEntity));
     }
+
+    public List<BookEntity> getData() {
+        return dbBookConnection.readData();
+    }
 }

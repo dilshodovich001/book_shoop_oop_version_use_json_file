@@ -2,6 +2,7 @@ package org.example.ui;
 
 import org.example.controller.BookController;
 import org.example.dto.BookRequest;
+import org.example.dto.BookResponse;
 import org.example.dto.RegionResponse;
 import org.example.dto.RegionShort;
 import org.example.entity.Profile;
@@ -12,16 +13,16 @@ import java.util.*;
 
 public class BookUi {
     private final BookController bookController = new BookController();
-    private  final RegionService regionService = new RegionService();
+    private final RegionService regionService = new RegionService();
 
-    public void start(Profile profile){
-        while (true){
-            switch (menu()){
-                case 1-> addBook(profile);
-                case 2-> showBook();
-                case 3-> editBook(profile);
-                case 4-> deleteBook(profile);
-                case 0-> {
+    public void start(Profile profile) {
+        while (true) {
+            switch (menu()) {
+                case 1 -> addBook(profile);
+                case 2 -> showBook();
+                case 3 -> editBook(profile);
+                case 4 -> deleteBook(profile);
+                case 0 -> {
                     return;
                 }
             }
@@ -37,7 +38,10 @@ public class BookUi {
     }
 
     private void showBook() {
-
+        System.out.print("Enter lang (ru/en/uz): ");
+        String lan = ScannerUtil.SCANNER_STR.next().toLowerCase();
+        List<BookResponse> responses = bookController.showBook(lan);
+        responses.forEach(System.out::println);
     }
 
     private void addBook(Profile profile) {
@@ -63,7 +67,7 @@ public class BookUi {
             String genreId = ScannerUtil.SCANNER_STR.next();
             genres.add(genreId);
         }
-        BookRequest request = new BookRequest(title,author,year,price,regionId,genres,profile);
+        BookRequest request = new BookRequest(title, author, year, price, regionId, genres, profile);
         bookController.addBook(request);
     }
 

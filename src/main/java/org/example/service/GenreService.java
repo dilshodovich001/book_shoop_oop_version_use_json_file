@@ -3,9 +3,12 @@ package org.example.service;
 import org.example.dto.GenreRequest;
 import org.example.dto.GenreResponse;
 import org.example.entity.GenreEntity;
+import org.example.enums.Language;
 import org.example.exeptions.GenreException;
 import org.example.repository.GenreRepository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import java.util.function.Function;
 
@@ -56,7 +59,7 @@ public class GenreService {
     }
 
     public void update(String id, GenreRequest request) {
-        if (id.isBlank()){
+        if (id.isBlank()) {
             throw new GenreException("Id is empty");
         }
         GenreEntity entity = genreRepository.getId(id);
@@ -67,7 +70,23 @@ public class GenreService {
         genreRepository.update(entity);
     }
 
-    public GenreEntity getGenreById(String id){
+    public GenreEntity getGenreById(String id) {
         return genreRepository.getId(id);
+    }
+
+    public List<GenreResponse.GenreLang> getGenByLang(Language language, List<GenreEntity> genreEntities) {
+        List<GenreResponse.GenreLang> list = new ArrayList<>();
+        for (GenreEntity genreEntity : genreEntities) {
+            GenreResponse.GenreLang genreLang = new GenreResponse.GenreLang(
+                    genreEntity.getId(),
+                    switch (language) {
+                        case en -> genreEntity.getNameEng();
+                        case ru -> genreEntity.getNameRu();
+                        default -> genreEntity.getNameUz();
+                    }
+            );
+            list.add(genreLang);
+        }
+        return list;
     }
 }

@@ -8,4 +8,8 @@ public record RegionResponse(
         String nameRu,
         String nameEn
 ) {
+    public record RegionLang(
+            UUID id,
+            String name
+    ){}
 }

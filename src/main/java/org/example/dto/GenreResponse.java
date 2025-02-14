@@ -8,4 +8,8 @@ public record GenreResponse(
         String nameRu,
         String nameEn
 ) {
+    public record GenreLang(
+            UUID id,
+            String name
+    ){}
 }
