@@ -23,4 +23,12 @@ public class ProfileRepository {
     public void save(Profile request) {
         dbProfileConnection.writeValue(List.of(request));
     }
+
+    public void fillBalance(Profile entity) {
+        List<Profile> profiles = dbProfileConnection.readData();
+        profiles.removeIf(profile -> profile.getId().equals(entity.getId()));
+        dbProfileConnection.clear();
+        profiles.add(entity);
+        dbProfileConnection.writeValue(profiles);
+    }
 }

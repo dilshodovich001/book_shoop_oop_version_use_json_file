@@ -58,4 +58,13 @@ public class DbProfileConnection {
             throw new RuntimeException(e);
         }
     }
+
+    public void clear(){
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writeValue(file,new ArrayList<>());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

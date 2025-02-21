@@ -14,4 +14,9 @@ public class BookRepository {
     public List<BookEntity> getData() {
         return dbBookConnection.readData();
     }
+
+    public void saveAll(List<BookEntity> bookEntities){
+        dbBookConnection.clear();
+        dbBookConnection.writeValue(bookEntities);
+    }
 }

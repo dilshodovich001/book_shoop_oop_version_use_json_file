@@ -10,7 +10,6 @@ public class ProfileUi {
     private final ProfileController profileController = new ProfileController();
     private final GenreUi genreUi = new GenreUi();
     private final BookUi bookUi = new BookUi();
-
     private final RegionUi regionUi = new RegionUi();
 
     public void login(String phone, String password) {
@@ -23,7 +22,43 @@ public class ProfileUi {
     }
 
     private void userStart(Profile profile) {
-        System.out.println("user menu");
+        while (true) {
+            switch (userMenu()) {
+                case 1 -> searchBook();
+                case 2 -> showBook();
+                case 3 -> buyBook(profile);
+                case 4 -> showOwnSales(profile);
+                case 5 -> changePassword(profile);
+                case 6 -> fillBalance(profile);
+            }
+        }
+    }
+
+    private void fillBalance(Profile profile) {
+        System.out.print("Enter money: ");
+        Double balance = ScannerUtil.SCANNER_NUM.nextDouble();
+        String response = profileController.fillBalance(profile, balance);
+        System.out.println(response);
+    }
+
+    private void changePassword(Profile profile) {
+
+    }
+
+    private void showOwnSales(Profile profile) {
+
+    }
+
+    private void buyBook(Profile profile) {
+
+    }
+
+    private void showBook() {
+
+    }
+
+    private void searchBook() {
+
     }
 
     private void adminStart(Profile profile) {
@@ -57,4 +92,21 @@ public class ProfileUi {
                 | Enter Option ->""");
         return ScannerUtil.SCANNER_NUM.nextInt();
     }
+
+    private int userMenu() {
+        System.out.print("""
+                +------  MENU  -------+
+                | 1 | Search Book     |
+                | 2 | Show Book       |
+                | 3 | Buy Book        |
+                | 4 | Show own Sales  |
+                | 5 | Change Password |
+                | 6 | Fill Balance    |
+                +---------------------+
+                | 0 | Exit            |
+                +---------------------+
+                | Enter Option ->""");
+        return ScannerUtil.SCANNER_NUM.nextInt();
+    }
+
 }

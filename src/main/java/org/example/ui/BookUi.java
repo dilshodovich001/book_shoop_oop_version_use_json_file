@@ -20,8 +20,8 @@ public class BookUi {
             switch (menu()) {
                 case 1 -> addBook(profile);
                 case 2 -> showBook();
-                case 3 -> editBook(profile);
-                case 4 -> deleteBook(profile);
+                case 3 -> editBook();
+                case 4 -> deleteBook();
                 case 0 -> {
                     return;
                 }
@@ -29,11 +29,14 @@ public class BookUi {
         }
     }
 
-    private void deleteBook(Profile profile) {
-
+    private void deleteBook() {
+        System.out.print("Enter id : ");
+        String id = ScannerUtil.SCANNER_STR.next();
+        boolean b = bookController.deleteBook(UUID.fromString(id));
+        System.out.println(b);
     }
 
-    private void editBook(Profile profile) {
+    private void editBook() {
 
     }
 

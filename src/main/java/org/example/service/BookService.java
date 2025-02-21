@@ -10,6 +10,7 @@ import org.example.repository.BookRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class BookService {
@@ -53,5 +54,20 @@ public class BookService {
             responses.add(response);
         }
         return responses;
+    }
+
+    public boolean deleteBook(UUID uuid) {
+        List<BookEntity> data = bookRepository.getData();
+        Optional<BookEntity> response = data
+                .stream()
+                .filter(bookEntity -> bookEntity.getId().equals(uuid)).findFirst();
+        data.removeIf(bookEntity -> bookEntity.getId().equals(uuid));
+        if (response.isPresent()) {
+            BookEntity entity = response.get();
+            entity.setVisible(Boolean.FALSE);
+            data.add(entity);
+            bookRepository.saveAll(data);
+        }
+        return true;
     }
 }

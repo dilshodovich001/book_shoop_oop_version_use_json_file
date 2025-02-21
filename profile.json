@@ -20,7 +20,7 @@
     "phone": "8888",
     "password": "8888",
     "age": 25,
-    "balance": 0.0,
+    "balance": 600000.0,
     "role": "USER"
   }
 ]

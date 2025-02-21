@@ -14,4 +14,8 @@ public class ProfileController {
     public String register(ProfileRequest request) {
         return profileService.register(request);
     }
+
+    public String fillBalance(Profile profile, Double balance) {
+        return profileService.fillBalance(profile,balance) ;
+    }
 }

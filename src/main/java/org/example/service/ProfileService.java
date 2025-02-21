@@ -49,6 +49,13 @@ public class ProfileService {
     }
 
     public ProfileResponse getProfileMapper(Profile profile) {
-        return new ProfileResponse(profile.getId(),profile.getName(),profile.getPhone());
+        return new ProfileResponse(profile.getId(), profile.getName(), profile.getPhone());
+    }
+
+    public String fillBalance(Profile profile, Double balance) {
+        Profile entity = profileRepository.getProfile(profile.getPhone(), profile.getPassword());
+        entity.setBalance(entity.getBalance() + balance);
+        profileRepository.fillBalance(entity);
+        return "Success";
     }
 }
