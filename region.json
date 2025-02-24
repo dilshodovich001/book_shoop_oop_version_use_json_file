@@ -82,5 +82,11 @@
     "nameUz": "Xorazm viloyati",
     "nameEng": "Khorezm region",
     "nameRu": "Хорезмская область"
+  },
+  {
+    "id": "3bea8d2b-80a2-4eff-88a6-a048a73fb718",
+    "nameUz": "TestUz",
+    "nameEng": "TestEn",
+    "nameRu": "TestRu"
   }
 ]

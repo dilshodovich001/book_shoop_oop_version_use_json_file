@@ -1,16 +1,24 @@
 package org.example.service;
 
+import org.example.db.DbBookConnection;
 import org.example.dto.ProfileRequest;
 import org.example.dto.ProfileResponse;
+import org.example.entity.BookEntity;
 import org.example.entity.Profile;
 import org.example.enums.GeneralStatus;
 import org.example.exeptions.MethodNotAllowedException;
 import org.example.exeptions.PasswordIsInValidException;
 import org.example.exeptions.PhoneIsInValidException;
+import org.example.repository.BookRepository;
 import org.example.repository.ProfileRepository;
+
+import java.util.Optional;
+import java.util.UUID;
 
 public class ProfileService {
     private final ProfileRepository profileRepository = new ProfileRepository();
+    private final BookRepository bookRepository = new BookRepository();
+    private final ProfileBookService profileBookService = new ProfileBookService();
 
     public Profile login(String phone, String password) {
         checkProfile(phone, password, "name", 18);
@@ -56,6 +64,20 @@ public class ProfileService {
         Profile entity = profileRepository.getProfile(profile.getPhone(), profile.getPassword());
         entity.setBalance(entity.getBalance() + balance);
         profileRepository.fillBalance(entity);
+        return "Success";
+    }
+
+    public String buyBook(UUID uuid, Profile profile) {
+        Optional<BookEntity> first = bookRepository.getData().stream().filter(bookEntity -> bookEntity.getId().equals(uuid)).findFirst();
+        if (first.isEmpty()) {
+            throw new RuntimeException();
+        }
+        if (first.get().getPrice() > profile.getBalance()) {
+            throw new RuntimeException("Not money");
+        }
+        profile.setBalance(profile.getBalance()-first.get().getPrice());
+        profileRepository.fillBalance(profile);
+        profileBookService.buyBook(first.get(), profile);
         return "Success";
     }
 }

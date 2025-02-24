@@ -19,4 +19,5 @@ public class BookRepository {
         dbBookConnection.clear();
         dbBookConnection.writeValue(bookEntities);
     }
+
 }

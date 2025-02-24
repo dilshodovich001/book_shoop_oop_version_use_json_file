@@ -70,4 +70,12 @@ public class BookService {
         }
         return true;
     }
+
+    public BookEntity getBook(UUID id) {
+        return bookRepository.getData()
+                .stream()
+                .filter(bookEntity -> bookEntity.getId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Book not found"));
+    }
 }

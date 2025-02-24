@@ -3,6 +3,7 @@ package org.example.entity;
 import lombok.*;
 import org.example.enums.ProfileRole;
 
+import java.util.List;
 import java.util.UUID;
 @Getter
 @Setter

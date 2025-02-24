@@ -4,6 +4,8 @@ import org.example.dto.ProfileRequest;
 import org.example.entity.Profile;
 import org.example.service.ProfileService;
 
+import java.util.UUID;
+
 public class ProfileController {
     private final ProfileService profileService = new ProfileService();
 
@@ -17,5 +19,9 @@ public class ProfileController {
 
     public String fillBalance(Profile profile, Double balance) {
         return profileService.fillBalance(profile,balance) ;
+    }
+
+    public String buyBook(UUID uuid, Profile profile) {
+        return profileService.buyBook(uuid,profile);
     }
 }

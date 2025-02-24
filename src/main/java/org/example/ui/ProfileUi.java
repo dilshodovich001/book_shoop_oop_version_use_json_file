@@ -6,6 +6,8 @@ import org.example.entity.Profile;
 import org.example.enums.ProfileRole;
 import org.example.util.ScannerUtil;
 
+import java.util.UUID;
+
 public class ProfileUi {
     private final ProfileController profileController = new ProfileController();
     private final GenreUi genreUi = new GenreUi();
@@ -50,7 +52,10 @@ public class ProfileUi {
     }
 
     private void buyBook(Profile profile) {
-
+        System.out.print("Enter book id : ");
+        String bookId = ScannerUtil.SCANNER_STR.next();
+        String response = profileController.buyBook(UUID.fromString(bookId), profile);
+        System.out.println(response);
     }
 
     private void showBook() {
